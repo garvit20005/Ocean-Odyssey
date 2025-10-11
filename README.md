@@ -50,4 +50,4 @@ You will see:
 1. Clone the repository:
     
    ```bash
-   git clone https://github.com/yourusername/ocean-odyssey.git
+   git clone https://github.com/garvit20005/ocean-odyssey.git
