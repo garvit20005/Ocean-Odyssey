@@ -1,0 +1,387 @@
+body {
+  background: linear-gradient(to bottom, #001a33 0%, #003d66 50%, #005580 100%);
+  background-attachment: fixed;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Bubble Effect Background */
+.bubble {
+  position: fixed;
+  bottom: -100px;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.3), rgba(135, 206, 250, 0.2));
+  border-radius: 50%;
+  opacity: 0.6;
+  animation: rise 15s infinite ease-in;
+  z-index: 0;
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+@keyframes rise {
+  0% {
+    bottom: -100px;
+    transform: translateX(0) scale(1);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.6;
+  }
+  90% {
+    opacity: 0.4;
+  }
+  100% {
+    bottom: 110vh;
+    transform: translateX(100px) scale(0.8);
+    opacity: 0;
+  }
+}
+
+/* Aquatic Wonders Title */
+#creatures h2 {
+  text-align: center;
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: #00d4ff;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin: 40px 0;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  text-shadow: 
+    0 0 10px rgba(0, 212, 255, 0.8),
+    0 0 20px rgba(0, 212, 255, 0.6),
+    0 0 30px rgba(0, 212, 255, 0.4),
+    2px 2px 4px rgba(0, 0, 0, 0.5);
+  animation: glow 3s ease-in-out infinite;
+}
+
+#creatures h2::before,
+#creatures h2::after {
+  content: "🐠";
+  position: absolute;
+  font-size: 2rem;
+  animation: swim-icon 4s ease-in-out infinite;
+}
+
+#creatures h2::before {
+  left: 10%;
+  animation-delay: 0s;
+}
+
+#creatures h2::after {
+  right: 10%;
+  animation-delay: 2s;
+}
+
+@keyframes glow {
+  0%, 100% {
+    text-shadow: 
+      0 0 10px rgba(0, 212, 255, 0.8),
+      0 0 20px rgba(0, 212, 255, 0.6),
+      0 0 30px rgba(0, 212, 255, 0.4),
+      2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  50% {
+    text-shadow: 
+      0 0 20px rgba(0, 255, 255, 1),
+      0 0 30px rgba(0, 255, 255, 0.8),
+      0 0 40px rgba(0, 255, 255, 0.6),
+      2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+}
+
+@keyframes swim-icon {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(10deg);
+  }
+}
+
+/* Ocean map */
+#map {
+  padding: 30px;
+  position: relative;
+  z-index: 1;
+}
+
+.map-canvas {
+  position: relative;
+  height: 300px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* 🐠 Fish shapes and animation lanes */
+.fish {
+  position: absolute;
+  width: 100px;
+  height: 40px;
+  background: linear-gradient(90deg, #6ee7ff, #2aa0d1);
+  border-radius: 50px;
+  opacity: 0.8;
+  animation: swim 12s linear infinite;
+}
+
+.fish1 {
+  top: 25%;
+  left: -120px;
+}
+
+.fish2 {
+  top: 60%;
+  left: -150px;
+  width: 140px;
+  height: 45px;
+  animation-duration: 15s;
+}
+
+/* Smooth fish motion */
+@keyframes swim {
+  0%   { transform: translateX(-150px) translateY(0); }
+  25%  { transform: translateX(25vw) translateY(-10px); }
+  50%  { transform: translateX(50vw) translateY(10px); }
+  75%  { transform: translateX(75vw) translateY(-10px); }
+  100% { transform: translateX(100vw) translateY(0); }
+}
+
+/* ✨ Flash animation for fact change */
+@keyframes flashFact {
+  0%   { background: rgba(255,255,255,0.6); transform: scale(1.2); }
+  50%  { background: rgba(255,255,255,0.3); transform: scale(0.95); }
+  100% { background: rgba(255,255,255,0.2); transform: scale(1); }
+}
+
+.hotspot.flash {
+  animation: flashFact 0.8s ease;
+}
+
+/* Hotspot buttons (rectangles) */
+.hotspot {
+  position: absolute;
+  padding: 8px 14px;
+  background: linear-gradient(45deg, rgba(255,255,255,0.25), rgba(0,191,255,0.25));
+  border: none;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 10px rgba(0, 191, 255, 0.3);
+  transition: all 0.35s ease;
+}
+
+.hotspot:hover {
+  transform: scale(1.1);
+  background: linear-gradient(45deg, rgba(0,191,255,0.5), rgba(30,144,255,0.6));
+  box-shadow: 0 6px 15px rgba(0, 191, 255, 0.6);
+}
+
+.hotspot:active {
+  transform: scale(0.95);
+  background: linear-gradient(45deg, rgba(30,144,255,0.8), rgba(0,191,255,0.8));
+}
+
+/* Modal background */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* Modal box */
+.modal-content {
+  background: #002b4d;
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+  color: white;
+  text-align: center;
+  position: relative;
+}
+
+/* Close button */
+.close-modal {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Cards */
+.card {
+  width: 200px;
+  height: 280px;
+  perspective: 1000px;
+  position: relative;
+  z-index: 2;
+}
+.card.is-flipped {
+  z-index: 10;
+}
+
+#creatures {
+  position: relative;
+  z-index: 1;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.card.is-flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  overflow: hidden;
+  background: rgba(255,255,255,0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+}
+
+.card-front img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.card-front h3, .card-back p {
+  color: white;
+}
+
+/* Cards layout */
+.cards-grid {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  flex-wrap: wrap;
+  padding: 30px;
+}
+
+/* Buttons */
+#randomFishBtn,
+#randomizeFishesBtn {
+  padding: 12px 28px;
+  background: linear-gradient(45deg, #1e90ff, #00bfff);
+  color: white;
+  font-size: 18px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 191, 255, 0.4);
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+#randomFishBtn:hover,
+#randomizeFishesBtn:hover {
+  background: linear-gradient(45deg, #00bfff, #1e90ff);
+  transform: scale(1.08);
+  box-shadow: 0 6px 20px rgba(0, 191, 255, 0.6);
+}
+
+#randomFishBtn:active,
+#randomizeFishesBtn:active {
+  transform: scale(0.96);
+}
+
+/* Chatbot */
+#oceanChatbot {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 280px;
+  background: rgba(0,43,77,0.9);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+  font-family: sans-serif;
+  z-index: 2000;
+}
+
+#chatHeader {
+  background: linear-gradient(90deg, #00bfff, #1e90ff);
+  color: white;
+  padding: 12px;
+  cursor: pointer;
+  font-weight: bold;
+  text-align: center;
+}
+
+#chatBody {
+  display: flex;
+  flex-direction: column;
+  height: 350px;
+  max-height: 350px;
+  display: none;
+}
+
+#messages {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+  color: white;
+}
+
+#userInput {
+  padding: 8px;
+  border: none;
+  border-top: 1px solid #00bfff;
+  outline: none;
+  width: calc(100% - 60px);
+  border-radius: 0;
+  background: rgba(255,255,255,0.1);
+  color: white;
+}
+
+#sendBtn {
+  width: 50px;
+  border: none;
+  background: #00bfff;
+  color: white;
+  cursor: pointer;
+}
+
+#messages .user {
+  text-align: right;
+  margin: 4px 0;
+}
+
+#messages .bot {
+  text-align: left;
+  margin: 4px 0;
+}
