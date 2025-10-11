@@ -10,10 +10,7 @@ Ocean Odyssey is an interactive web-based project designed to take users on an i
 - [Features](#features)
 - [Technologies Used](#technologies-used)
 - [Installation](#installation)
-- [Usage](#usage)
-- [Project Structure](#project-structure)
-- [Credits](#credits)
-- [License](#license)
+
 
 ---
 
