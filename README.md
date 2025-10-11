@@ -48,6 +48,6 @@ You will see:
 
 ## Installation
 1. Clone the repository:
-    git clone https://github.com/yourusername/ocean-odyssey.git
+    
    ```bash
    git clone https://github.com/yourusername/ocean-odyssey.git
