@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ocean Odyssey</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .wave-text {
+      font-size: 4rem;
+      font-weight: bold;
+      color: #A7E3E0;
+      text-align: center;
+      animation: wave 3s ease-in-out infinite;
+      position: relative;
+      z-index: 1;
+    }
+    @keyframes wave {
+      0%, 100% { transform: translateY(0px); }
+      25% { transform: translateY(-10px); }
+      50% { transform: translateY(5px); }
+      75% { transform: translateY(-5px); }
+    }
+  </style>
+</head>
+<body>
+<!-- Bubble Background -->
+<div id="bubble-container"></div>
+<h1 class="wave-text">🌊 Ocean Odyssey - Explore the Deep Sea 🌊</h1>
+<section id="map">
+  <div class="map-canvas">
+    <div class="fish fish1"></div>
+    <div class="fish fish2"></div>
+    <button class="hotspot" style="top:40%; left:20%" data-title="Mysterious Facts" data-text="1️⃣ Seahorses are the only fish where males give birth. 2️⃣ Sharks existed before trees.">Mysterious Facts</button>
+    <button class="hotspot" style="top:65%; left:60%" data-title="Mysterious Facts" data-text="1️⃣ Starfish can regenerate lost arms. 2️⃣ Dolphins sleep with one eye open.">Mysterious Facts</button>
+  </div>
+  <div style="text-align:center; margin:20px 0;">
+    <button id="randomizeFishesBtn">Randomize Fish Colors & Facts</button>
+  </div>
+</section>
+<!-- Modal -->
+<div id="infoModal" class="modal">
+  <div class="modal-content">
+    <button class="close-modal">✕</button>
+    <h3 id="modalTitle"></h3>
+    <p id="modalText"></p>
+  </div>
+</div>
+
+<section id="creatures">
+  <h2>🌊 Aquatic Wonders 🌊</h2>
+  <div class="cards-grid" id="default-cards">
+    <article class="card">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="https://assets.traveltriangle.com/blog/wp-content/uploads/2016/07/Neptune-Memorial-Reef.png" alt="Neptune Memorial Reef">
+          <h3>Neptune Memorial Reef</h3>
+        </div>
+        <div class="card-back">
+          <p>You can literally see dead people in the Neptune Memorial Reef in Miami, Florida where human remains have been used to create this artificial reef.
+             People's ashes were mixed with cement to create this reef. Filefish, trunkfish, sea urchins and various other kinds of marine animals have now made this reef their home.
+</p>
+        </div>
+      </div>
+    </article>
+    <article class="card">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="https://assets.traveltriangle.com/blog/wp-content/uploads/2016/07/Divers-at-Blue-Corner.jpg" alt="Blue Corner Wall">
+          <h3>Blue Corner Wall</h3>
+        </div>
+        <div class="card-back">
+          <p>Considered as one of the best diving sites in the world, the Blue Corner Wall in Palau is a sight for sore eyes.
+             Multitudes of rich marine life including schools of pelagic fish, bright sea whips, rich coral reefs, flapping eagle rays, and darting reef sharks can be spotted swimming around. But be careful as the currents are quite strong here so make sure you explore the area with experienced divers.</p>
+        </div>
+      </div>
+    </article>
+    <article class="card">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="https://assets.traveltriangle.com/blog/wp-content/uploads/2016/07/sandfalls-mexico.jpg" alt=" Sandfalls">
+          <h3> Sandfalls</h3>
+        </div>
+        <div class="card-back">
+          <p>Dive into the deep waters of Cabo, Mexico and witness the unique phenomenon of sand waterfalls.
+             Strong currents force coastal shelves to spill sand like waterfalls into a 120 m abyss. You can also spot octopus, reef sharks and barracudas swimming along in this abyss.
+
+</p>
+        </div>
+      </div>
+    </article>
+      <article class="card">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="https://assets.traveltriangle.com/blog/wp-content/uploads/2016/07/great_barrier_reef.jpg" alt="Great Barrier Reef">
+          <h3>Great Barrier Reef</h3>
+        </div>
+        <div class="card-back">
+          <p>Explore the multi-colored vibrancy of the world's largest coral reef that can be spotted from the earth's orbit: the Great Barrier Reef. Underwater gardens and a multitude of marine life make up this incredible Heritage Sight.
+             This reef is also considered as one of the seven natural wonders of the world.
+</p>
+        </div>
+      </div>
+    </article>
+      <article class="card">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="https://assets.traveltriangle.com/blog/wp-content/uploads/2016/07/green-lake-austria-2.jpg" alt="Green Lake (Austria)">
+          <h3>Green Lake (Austria)</h3>
+        </div>
+        <div class="card-back">
+          <p>This is one of the most phenomenal wonders of the underwater world where the surrounding park goes underwater during summer.
+             The ice and snow from the surrounding Hochschwab mountains in Austria melt and convert the park into a lake. Scuba divers can plunge in and explore the green foliage underneath that is also replete with benches, trees, and plants.
+          </p> </div>
+      </div>
+    </article>  <article class="card">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="https://assets.traveltriangle.com/blog/wp-content/uploads/2016/07/deans-blue-hole.jpg" alt="Dean's Blue Hole">
+          <h3>Dean's Blue Hole</h3>
+        </div>
+        <div class="card-back">
+          <p>Dive into a circular shaft of salt-water that gets deeper and deeper and find yourself surrounded by friendly turtles, barracudas, snappers, jacks, tarpons, and tiny seahorses. 
+            Dean's Blue Hole in Long Island is also the deepest blue hole that is a delight for any scuba diver.
+</p>
+        </div>
+      </div>
+    </article>  <article class="card">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="https://assets.traveltriangle.com/blog/wp-content/uploads/2016/07/Underwater-Waterfall-Mauritius.jpg" alt="Underwater Waterfall">
+          <h3>Underwater Waterfall</h3>
+        </div>
+        <div class="card-back">
+          <p>The underwater waterfall in Mauritius is not an actual waterfall but an optical illusion created by sediments of silt and sand.
+             This optical illusion is one of the greatest attractions of this island and the underwater slope is a sight to behold. Go swimming in the warm clear waters of this relatively new island and behold one of the underwater wonders of the world.
+          </p> </div>
+      </div>
+    </article>  <article class="card">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="https://assets.traveltriangle.com/blog/wp-content/uploads/2016/07/Zhemchug-Canyon.png" alt="Zhemchug Canyon">
+          <h3>Zhemchug Canyon</h3>
+        </div>
+        <div class="card-back">
+          <p>Zhemchug Canyon in the Bering Sea is the biggest and deepest underwater canyon you will come across in the world.
+             Lying 2.6 m deep and full of cold, oxygen-rich water, this underwater ravine is filled with marine life like the short-tailed albatross, the Northern Fur Seal, the snow crab and different types of whales.
+          </p></div>
+      </div>
+    </article>  <article class="card">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="https://assets.traveltriangle.com/blog/wp-content/uploads/2016/07/Heracleion-Egypt.jpg" alt="Cleopatra's Heracleion">
+          <h3>Cleopatra's Heracleion</h3>
+        </div>
+        <div class="card-back">
+          <p>The Palace of Cleopatra was considered a myth but was finally discovered underwater by French archaeologist Franck Goddio in 2000. Lying off the shores of Alexandria this city was submerged around 1,200 years ago.
+             Giant slabs of stones with Egyptian and Greek inscriptions, bronze statues, coins, ships – all dot the ocean floor and make The Palace of Cleopatra one of the greatest wonders of the underwater world.
+</p>
+        </div>
+      </div>
+    </article>  <article class="card">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="https://assets.traveltriangle.com/blog/wp-content/uploads/2016/07/port-royal-jamaica.jpg" alt="Port Royal (Jamaica)">
+          <h3>Port Royal (Jamaica)</h3>
+        </div>
+        <div class="card-back">
+          <p>Explore the once sinful and wicked city of Port Royal in Jamaica that was submerged under the ocean due to a massive earthquake in 1692.
+           This city now lies 40 feet deep and contains many precious artefacts, many of which are still quite intact.
+        </p></div>
+      </div>
+    </article>
+      <article class="card">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="https://assets.traveltriangle.com/blog/wp-content/uploads/2016/07/Underwater-Museum-Mexico.jpg" alt="Underwater Museum, Mexico">
+          <h3>Underwater Museum</h3>
+        </div>
+        <div class="card-back">
+          <p>The Underwater Museum in Mexico is a great site to go snorkeling as there are over 470 statues to explore! These include the Man on Fire, Cross of the Bay, Thing Blue (Beetle Car), El Bacab, Anthropocene (VW Car), Silent Evolution (450 statues), The Promise and the Dream Collector.
+             There are also plenty of fish and turtles swimming around the statue.
+</p>
+        </div>
+      </div>
+    </article>  <article class="card">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="https://assets.traveltriangle.com/blog/wp-content/uploads/2016/07/Yongala-Shipwreck-Australia.jpg" alt="Yongala Shipwreck, Australia">
+          <h3>Yongala Shipwreck</h3>
+        </div>
+        <div class="card-back">
+          <p>The Yongala Shipwreck is one of Australia's most famous diving sites, located off the coast of Queensland.
+             The ship sank in 1911 during a cyclone, taking all 122 lives on board. Today, it is home to a vibrant coral reef, attracting divers worldwide to explore its rich marine life.
+
+</p>
+        </div>
+      </div>
+    </article>
+  </div>
+
+  <div style="text-align:center; margin-top:20px;">
+    <button id="randomFishBtn">Generate Random Fishes</button>
+  </div>
+  <div id="fish-container" class="cards-grid"></div>
+</section>
+
+<script type="module" src="index.js"></script>
+<!-- Chatbot -->
+<div id="oceanChatbot">
+  <div id="chatHeader">🌊 Ocean Bot</div>
+  <div id="chatBody">
+    <div id="messages"></div>
+    <input type="text" id="userInput" placeholder="Write ocean term,eg:dolphin,ocean..." />
+    <button id="sendBtn">Send</button>
+  </div>
+</div>
+
+</body>
+</html>
