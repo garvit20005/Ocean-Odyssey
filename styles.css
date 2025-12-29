@@ -385,3 +385,54 @@ body {
   text-align: left;
   margin: 4px 0;
 }
+.footer {
+  width: 100%;
+  padding: 15px 0;
+  text-align: center;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.footer p {
+  margin: 0;
+}
+
+.footer .name {
+  font-weight: 600;
+  color: #00e5ff;
+  transition: color 0.3s ease;
+}
+
+.footer .name:hover {
+  color: #ffcc70;
+}
+
+.heart {
+  display: inline-block;
+  animation: heartbeat 1.5s infinite;
+  color: #ff4d6d;
+}
+
+/* Heartbeat animation */
+@keyframes heartbeat {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.2);
+  }
+  40% {
+    transform: scale(1);
+  }
+  60% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
